@@ -28,17 +28,15 @@
  * THE SOFTWARE.
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
-public class Rotate : MonoBehaviour
+public class DestroyTimer : MonoBehaviour
 {
-    public Vector3 rotationSpeed;
+    public float timeToDestroy;
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
-        transform.Rotate(rotationSpeed * Time.deltaTime);
+        Destroy(gameObject, timeToDestroy);
     }
 }

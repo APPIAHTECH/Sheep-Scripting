@@ -1,4 +1,5 @@
-﻿/*
+﻿
+/*
  * Copyright (c) 2019 Razeware LLC
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -27,18 +28,41 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Rotate : MonoBehaviour
+public class SoundManager : MonoBehaviour
 {
-    public Vector3 rotationSpeed;
+    public static SoundManager Instance;
 
-    // Update is called once per frame
-    void Update()
+    public AudioClip shootClip;
+    public AudioClip sheepHitClip;
+    public AudioClip sheepDroppedClip;
+
+    private Vector3 cameraPosition;
+    
+    private void Awake()
     {
-        transform.Rotate(rotationSpeed * Time.deltaTime);
+        Instance = this;
+        cameraPosition = Camera.main.transform.position;
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        AudioSource.PlayClipAtPoint(clip, cameraPosition);
+    }
+
+    public void PlayShootClip()
+    {
+        PlaySound(shootClip);
+    }
+
+    public void PlaySheepHitClip()
+    {
+        PlaySound(sheepHitClip);
+    }
+
+    public void PlaySheepDroppedClip()
+    {
+        PlaySound(sheepDroppedClip);
     }
 }

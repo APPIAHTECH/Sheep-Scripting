@@ -28,17 +28,34 @@
  * THE SOFTWARE.
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Rotate : MonoBehaviour
+public class UIManager : MonoBehaviour
 {
-    public Vector3 rotationSpeed;
+    public static UIManager Instance;
 
-    // Update is called once per frame
-    void Update()
+    public Text sheepSavedText;
+    public Text sheepDroppedText;
+    public GameObject gameOverWindow;
+    
+    private void Awake()
     {
-        transform.Rotate(rotationSpeed * Time.deltaTime);
+        Instance = this;
+    }
+
+    public void UpdateSheepSaved()
+    {
+        sheepSavedText.text = GameStateManager.Instance.sheepSaved.ToString();
+    }
+
+    public void UpdateSheepDropped()
+    {
+        sheepDroppedText.text = GameStateManager.Instance.sheepDropped.ToString();
+    }
+
+    public void ShowGameOverWindow()
+    {
+        gameOverWindow.SetActive(true);
     }
 }

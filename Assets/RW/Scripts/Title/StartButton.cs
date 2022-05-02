@@ -28,17 +28,14 @@
  * THE SOFTWARE.
  */
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
-public class Rotate : MonoBehaviour
+public class StartButton : MonoBehaviour, IPointerClickHandler
 {
-    public Vector3 rotationSpeed;
-
-    // Update is called once per frame
-    void Update()
+    public void OnPointerClick(PointerEventData eventData)
     {
-        transform.Rotate(rotationSpeed * Time.deltaTime);
+        SceneManager.LoadScene("Game");
     }
 }

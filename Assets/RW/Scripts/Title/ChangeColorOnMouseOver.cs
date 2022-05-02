@@ -27,18 +27,28 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Rotate : MonoBehaviour
+public class ChangeColorOnMouseOver : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public Vector3 rotationSpeed;
+    public MeshRenderer model;
 
-    // Update is called once per frame
-    void Update()
+    public Color normalColor;
+    public Color hoverColor;
+    
+    void Start()
     {
-        transform.Rotate(rotationSpeed * Time.deltaTime);
+        model.material.color = normalColor;
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        model.material.color = hoverColor;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        model.material.color = normalColor;
     }
 }

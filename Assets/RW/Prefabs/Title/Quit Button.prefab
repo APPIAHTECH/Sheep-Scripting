@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3302737677776531233}
+  - component: {fileID: 8266283727574291241}
+  - component: {fileID: 7575779617500582109}
+  - component: {fileID: 5392674180167603184}
   m_Layer: 0
   m_Name: Quit Button
   m_TagString: Untagged
@@ -31,6 +34,46 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8266283727574291241
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8984668907204267089}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 1, z: 0.4}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7575779617500582109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8984668907204267089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77d37c1caf3adfd4fb8517bdafeca380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  model: {fileID: 5665794796121731600}
+  normalColor: {r: 0.8018868, g: 0.8018868, b: 0.8018868, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &5392674180167603184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8984668907204267089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 981d0a8ee2aa3b344939d8d638c9fb46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5665794796123630192
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -91,6 +134,12 @@ PrefabInstance:
 --- !u!4 &5665794796123500784 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 0760bf54179f6744c97628b3f618554d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5665794796123630192}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &5665794796121731600 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300000, guid: 0760bf54179f6744c97628b3f618554d,
     type: 3}
   m_PrefabInstance: {fileID: 5665794796123630192}
   m_PrefabAsset: {fileID: 0}
